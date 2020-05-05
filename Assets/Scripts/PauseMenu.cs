@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         //If input for escape key and showInv is false
-        if (Input.GetKeyDown(KeyCode.Escape) && !LinearInventory.showInv)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             //Toggle pause state
             TogglePause();
