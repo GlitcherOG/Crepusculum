@@ -17,19 +17,19 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKey("w"))
         {
             movement(0);
         }
-        if (Input.GetKeyDown("d"))
+        if (Input.GetKey("d"))
         {
             movement(1);
         }
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKey("s"))
         {
             movement(2);
         }
-        if (Input.GetKeyDown("a"))
+        if (Input.GetKey("a"))
         {
             movement(3);
         }
@@ -43,9 +43,8 @@ public class PlayerController : MonoBehaviour
     {
         if(move && Timer <= 0)
         {
-            Timer = 0.5f;
+            Timer = 0.3f;
             RaycastHit2D hit;
-            Debug.Log(Movement);
             switch (Movement)
             {
                 case 0:
