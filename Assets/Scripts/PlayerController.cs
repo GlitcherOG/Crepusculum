@@ -7,7 +7,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float Health = 100;
+    public float maxHealth = 100f;
     public float Stamina = 100;
+    public float maxStamina = 100f;
+
     bool move = true;
     float Timer;
     private void Start()
