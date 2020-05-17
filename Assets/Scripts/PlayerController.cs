@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float maxHealth = 100f;
     public float Stamina = 100;
     public float maxStamina = 100f;
+    public Animator player;
 
     bool move = true;
     float Timer;
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         if(move && Timer <= 0)
         {
-            Timer = 0.3f;
+            Timer = 0.4f;
             RaycastHit2D hit;
             switch (Movement)
             {
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
                     hit = Physics2D.Raycast(transform.position, Vector2.up);
                     if (hit.distance > 1 || hit == false)
                     {
+                        player.SetTrigger("WalkingDown");
                         gameObject.transform.position += new Vector3(0, 1, 0);
                     }
                     break;
@@ -61,6 +63,7 @@ public class PlayerController : MonoBehaviour
                     hit = Physics2D.Raycast(transform.position, Vector2.right);
                     if (hit.distance > 1 || hit==false)
                     {
+                        player.SetTrigger("WalkingRight");
                         gameObject.transform.position += new Vector3(1, 0, 0);
                     }
                     break;
@@ -68,6 +71,7 @@ public class PlayerController : MonoBehaviour
                     hit = Physics2D.Raycast(transform.position, Vector2.down);
                     if (hit.distance > 1 || hit == false)
                     {
+                        player.SetTrigger("Walking");
                         gameObject.transform.position += new Vector3(0, -1, 0);
                     }
                     break;
@@ -75,6 +79,7 @@ public class PlayerController : MonoBehaviour
                     hit = Physics2D.Raycast(transform.position, Vector2.left);
                     if (hit.distance > 1 || hit == false)
                     {
+                        player.SetTrigger("WalkingLeft");
                         gameObject.transform.position += new Vector3(-1, 0, 0);
                     }
                     break;

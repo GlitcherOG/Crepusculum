@@ -1,7 +1,19 @@
 fileFormatVersion: 2
-guid: 22dcad4544f72304d806cd63d2437ce7
+guid: a2ea45dc05acb494b943857e6220e104
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 105412729752204649
+    second: iconfinder_Arrow-ui-ux-mobile-web_4960722_0
+  - first:
+      213: 4254417843031707648
+    second: iconfinder_Arrow-ui-ux-mobile-web_4960722_1
+  - first:
+      213: 7177535585350970580
+    second: iconfinder_Arrow-ui-ux-mobile-web_4960722_2
+  - first:
+      213: -8535115553887272591
+    second: iconfinder_Arrow-ui-ux-mobile-web_4960722_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,7 +121,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: iconfinder_Arrow-ui-ux-mobile-web_4960722_0
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 362
+        width: 172
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9653fa7b150867100800000000000000
+      internalID: 105412729752204649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconfinder_Arrow-ui-ux-mobile-web_4960722_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 170
+        width: 108
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0001df3cc7aba0b30800000000000000
+      internalID: 4254417843031707648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconfinder_Arrow-ui-ux-mobile-web_4960722_2
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 170
+        width: 108
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dce19f269abb9360800000000000000
+      internalID: 7177535585350970580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconfinder_Arrow-ui-ux-mobile-web_4960722_3
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 42
+        width: 172
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17143adef9d2d8980800000000000000
+      internalID: -8535115553887272591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
