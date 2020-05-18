@@ -32,6 +32,8 @@ public class PlayerBattleController : MonoBehaviour
     void Start()
     {
         player.Stamina = 0f;
+        defeatImage.gameObject.SetActive(false);
+        victoryImage.gameObject.SetActive(false);
     }
     void Update()
     {
@@ -94,7 +96,7 @@ public class PlayerBattleController : MonoBehaviour
             }
             }
 
-        if(inBattle && enemyHealth <= 0)
+        if(inBattle && enemyHealth <=0 && !startOfBattle)
         {
             endBattlePanel.gameObject.SetActive(true);
             victoryImage.gameObject.SetActive(true);
