@@ -67,26 +67,28 @@ public class PlayerController : MonoBehaviour
 
     public void movement(int Movement) // 0 up, 1 right, 2 down, 3 left
     {
-        if(move && Timer <= 0)
+        if (move && Timer <= 0)
         {
             Timer = 0.4f;
             Check();
             RaycastHit2D hit;
+            //AnimationReset();
+            //player.SetTrigger("Walking");
             switch (Movement)
             {
                 case 0:
                     hit = Physics2D.Raycast(transform.position, Vector2.up);
                     if (hit.distance > 1 || hit == false)
                     {
-                        player.SetTrigger("WalkingDown");
+                        //player.SetBool("WalkingDown", true);
                         gameObject.transform.position += new Vector3(0, 1, 0);
                     }
                     break;
                 case 1:
                     hit = Physics2D.Raycast(transform.position, Vector2.right);
-                    if (hit.distance > 1 || hit==false)
+                    if (hit.distance > 1 || hit == false)
                     {
-                        player.SetTrigger("WalkingRight");
+                        //player.SetBool("WalkingRight", true);
                         gameObject.transform.position += new Vector3(1, 0, 0);
                     }
                     break;
@@ -94,7 +96,7 @@ public class PlayerController : MonoBehaviour
                     hit = Physics2D.Raycast(transform.position, Vector2.down);
                     if (hit.distance > 1 || hit == false)
                     {
-                        player.SetTrigger("Walking");
+                        //player.SetBool("WalkingUp", true);
                         gameObject.transform.position += new Vector3(0, -1, 0);
                     }
                     break;
@@ -102,14 +104,22 @@ public class PlayerController : MonoBehaviour
                     hit = Physics2D.Raycast(transform.position, Vector2.left);
                     if (hit.distance > 1 || hit == false)
                     {
-                        player.SetTrigger("WalkingLeft");
+                        player.SetBool("WalkingLeft", true);
                         gameObject.transform.position += new Vector3(-1, 0, 0);
                     }
                     break;
                 default:
-                    
+
                     break;
             }
+        }
+
+        void AnimationReset()
+        {
+            player.SetBool("WalkingUp", false);
+            player.SetBool("WalkingDown", false);
+            player.SetBool("WalkingLeft", false);
+            player.SetBool("WalkingRight", false);
         }
     }
 }
