@@ -32,6 +32,7 @@ public class PlayerBattleController : MonoBehaviour
     public float enemyStamina;
 
     public bool startOfBattle = false;
+    public float lootChance = 0;
 
     void Start()
     {
@@ -62,11 +63,11 @@ public class PlayerBattleController : MonoBehaviour
 
             if(player.itemsHeld > 0)
             {
-                itemButton.enabled = true;
+                itemButton.gameObject.SetActive(true);
             }
             else
             {
-                itemButton.enabled = false;
+                itemButton.gameObject.SetActive(false);
             }
         }
         else
@@ -131,11 +132,15 @@ public class PlayerBattleController : MonoBehaviour
             victoryImage.gameObject.SetActive(true);
             player.Stamina = 0;
             enemyStamina = 0;
-            float lootChance = Random.Range(1, 3);
-            if(lootChance == 1 && player.itemsHeld != player.maxItems)
+            if (lootChance == 0)
             {
-                player.itemsHeld += 1f;
-                lootText.enabled = true;
+                lootChance = Random.Range(1, 3);
+                if (lootChance == 1 && player.itemsHeld != player.maxItems)
+                {
+                    player.itemsHeld += 1f;
+                    lootText.enabled = true;
+                    lootChance = 8;
+                }
             }
         }
         else if(inBattle && player.Health <= 0)
@@ -312,6 +317,7 @@ public class PlayerBattleController : MonoBehaviour
         enemyStamina = 0;
         enemySelect = 0f;
         combatLogText.text = "";
+        lootChance = 0;
         inBattle = false;
 
     }
