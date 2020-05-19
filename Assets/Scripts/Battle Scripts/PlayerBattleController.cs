@@ -9,6 +9,7 @@ public class PlayerBattleController : MonoBehaviour
 
     //canvas control
     public Canvas battleCanvas;
+    public Canvas mainCanvas;
     public bool inBattle = false;
     public Image endBattlePanel;
     public Image victoryImage;
@@ -44,6 +45,7 @@ public class PlayerBattleController : MonoBehaviour
         if(inBattle)
         {
             battleCanvas.gameObject.SetActive(true);
+            mainCanvas.gameObject.SetActive(false);
             ActiveTime();
             if(enemySelect == 0)
             {
@@ -59,7 +61,7 @@ public class PlayerBattleController : MonoBehaviour
         {
             enemySelect = 0f;
             battleCanvas.gameObject.SetActive(false);
-
+            mainCanvas.gameObject.SetActive(true);
         }
 
         if (shouldSelectEnemy)

@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public PlayerBattleController battle;
     public float Health = 100;
     public float maxHealth = 100f;
     public float Stamina = 100;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     bool move = true;
     float Timer;
+    int battleCooldown;
     private void Start()
     {
 
@@ -21,25 +23,45 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey("w"))
+        if (battle.inBattle == false)
         {
-            movement(0);
+            if (Input.GetKey("w"))
+            {
+                movement(0);
+            }
+            if (Input.GetKey("d"))
+            {
+                movement(1);
+            }
+            if (Input.GetKey("s"))
+            {
+                movement(2);
+            }
+            if (Input.GetKey("a"))
+            {
+                movement(3);
+            }
+            if (Timer >= 0)
+            {
+                Timer -= Time.deltaTime;
+            }
         }
-        if (Input.GetKey("d"))
+    }
+
+    public void Check()
+    {
+        int roll = Random.Range(1, 10);
+        if (battleCooldown == 0)
         {
-            movement(1);
+            if (roll == 1)
+            {
+                battleCooldown = 3;
+                battle.inBattle = true;
+            }
         }
-        if (Input.GetKey("s"))
+        else
         {
-            movement(2);
-        }
-        if (Input.GetKey("a"))
-        {
-            movement(3);
-        }
-        if (Timer>=0)
-        {
-            Timer -= Time.deltaTime;
+            battleCooldown -= 1;
         }
     }
 
@@ -48,6 +70,7 @@ public class PlayerController : MonoBehaviour
         if(move && Timer <= 0)
         {
             Timer = 0.4f;
+            Check();
             RaycastHit2D hit;
             switch (Movement)
             {

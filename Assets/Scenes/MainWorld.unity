@@ -456,6 +456,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BattleUICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3029857069219032783, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3029857069219032787, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -494,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 3029857069219032787, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3029857069219032787, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
@@ -570,6 +575,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: onEtherButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029857069750778162, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1234914173}
+    - target: {fileID: 3029857069750778162, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BattleReset
       objectReference: {fileID: 0}
     - target: {fileID: 3029857070619414949, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
@@ -2829,6 +2844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce0d8a9dfc067e448f26c69b33f134e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  battle: {fileID: 1234914173}
   Health: 100
   maxHealth: 100
   Stamina: 0
@@ -2932,6 +2948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1234914169}
   battleCanvas: {fileID: 948672256}
+  mainCanvas: {fileID: 1687705953}
   inBattle: 0
   endBattlePanel: {fileID: 46684286}
   victoryImage: {fileID: 1937289843}
@@ -3388,7 +3405,7 @@ RectTransform:
   m_Children:
   - {fileID: 1665039583}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4687,7 +4704,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2117167149 stripped
 MonoBehaviour:
