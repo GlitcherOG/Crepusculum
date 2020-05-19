@@ -14,6 +14,8 @@ public class PlayerBattleController : MonoBehaviour
     public Image endBattlePanel;
     public Image victoryImage;
     public Image defeatImage;
+    public Button itemButton;
+    public Text lootText;
 
     //display numeric changes
     public Image playerHealthImage;
@@ -56,6 +58,15 @@ public class PlayerBattleController : MonoBehaviour
             else
             {
                 shouldSelectEnemy = false;
+            }
+
+            if(player.itemsHeld > 0)
+            {
+                itemButton.enabled = true;
+            }
+            else
+            {
+                itemButton.enabled = false;
             }
         }
         else
@@ -120,6 +131,12 @@ public class PlayerBattleController : MonoBehaviour
             victoryImage.gameObject.SetActive(true);
             player.Stamina = 0;
             enemyStamina = 0;
+            float lootChance = Random.Range(1, 3);
+            if(lootChance == 1 && player.itemsHeld != player.maxItems)
+            {
+                player.itemsHeld += 1f;
+                lootText.enabled = true;
+            }
         }
         else if(inBattle && player.Health <= 0)
         {
@@ -272,6 +289,20 @@ public class PlayerBattleController : MonoBehaviour
         }
 
         player.Stamina = 0f;
+    }
+
+    public void onItemButton()
+    {
+        if(player.itemsHeld > 0 && player.Health < player.maxHealth)
+        {
+            player.Health += 60;
+            if(player.Health > player.maxHealth)
+            {
+                player.Health = player.maxHealth;
+            }
+            combatLogText.text = "Sure wish that tasted better...";
+        }
+        player.itemsHeld -= 1f;
     }
 
     public void BattleReset()

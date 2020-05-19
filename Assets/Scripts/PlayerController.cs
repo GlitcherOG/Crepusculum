@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float maxHealth = 100f;
     public float Stamina = 100;
     public float maxStamina = 100f;
+    public float itemsHeld;
+    public float maxItems = 5f;
     public Animator player;
 
     bool move = true;

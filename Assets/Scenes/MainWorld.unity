@@ -453,6 +453,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 702212550940631423, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1849930554217732502, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1234914173}
+    - target: {fileID: 1849930554217732502, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onItemButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3029857068979355956, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -593,6 +608,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BattleReset
       objectReference: {fileID: 0}
+    - target: {fileID: 3029857070390419848, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.2900391
+      objectReference: {fileID: 0}
     - target: {fileID: 3029857070619414949, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -623,8 +643,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: onSilverButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6970702968040713899, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.099975586
+      objectReference: {fileID: 0}
+    - target: {fileID: 6970702968040713899, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.2900085
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d594c9ddc1b72b04bb7635a434b01729, type: 3}
+--- !u!114 &876804439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1176055785038010388, guid: d594c9ddc1b72b04bb7635a434b01729,
+    type: 3}
+  m_PrefabInstance: {fileID: 876804438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!223 &948672256 stripped
 Canvas:
   m_CorrespondingSourceObject: {fileID: 3029857069219032780, guid: d594c9ddc1b72b04bb7635a434b01729,
@@ -2819,6 +2861,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176875247}
   m_CullTransparentMesh: 0
+--- !u!114 &1199259592 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1849930554217732502, guid: d594c9ddc1b72b04bb7635a434b01729,
+    type: 3}
+  m_PrefabInstance: {fileID: 876804438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1234914168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,6 +2910,8 @@ MonoBehaviour:
   maxHealth: 100
   Stamina: 0
   maxStamina: 100
+  itemsHeld: 0
+  maxItems: 5
   player: {fileID: 1234914172}
 --- !u!212 &1234914170
 SpriteRenderer:
@@ -2896,7 +2952,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b87660d4904f8ff4db2ec3086e477f63, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bafbaa3d8de17b6429c7f575a9dab8cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2915,8 +2971,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234914168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: 0.5038, y: 0.5, z: 0}
+  m_LocalScale: {x: 6.2472644, y: 6.19976, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2929,7 +2985,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234914168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4c4df80e50776fb499c8f6f9f92d0f12, type: 2}
   m_CullingMode: 0
@@ -2959,6 +3015,8 @@ MonoBehaviour:
   endBattlePanel: {fileID: 46684286}
   victoryImage: {fileID: 1937289843}
   defeatImage: {fileID: 1826805517}
+  itemButton: {fileID: 1199259592}
+  lootText: {fileID: 876804439}
   playerHealthImage: {fileID: 205231755}
   enemyhealthImage: {fileID: 2117167149}
   playerStaminaImage: {fileID: 153433464}
