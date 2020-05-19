@@ -67803,6 +67803,8 @@ MonoBehaviour:
   maxHealth: 100
   Stamina: 0
   maxStamina: 100
+  itemsHeld: 0
+  maxItems: 5
   player: {fileID: 1234914172}
   camera: {fileID: 1938191917}
 --- !u!212 &1234914170
@@ -67844,12 +67846,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b87660d4904f8ff4db2ec3086e477f63, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bafbaa3d8de17b6429c7f575a9dab8cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -67907,9 +67909,12 @@ MonoBehaviour:
   endBattlePanel: {fileID: 46684286}
   victoryImage: {fileID: 1937289843}
   defeatImage: {fileID: 1826805517}
+  itemButton: {fileID: 0}
+  lootText: {fileID: 0}
   playerHealthImage: {fileID: 205231755}
   enemyhealthImage: {fileID: 2117167149}
   playerStaminaImage: {fileID: 153433464}
+  combatLogText: {fileID: 0}
   enemySelect: 0
   shouldSelectEnemy: 0
   enemyMaxHealth: 0
@@ -67917,6 +67922,7 @@ MonoBehaviour:
   enemyMaxStamina: 0
   enemyStamina: 0
   startOfBattle: 0
+  lootChance: 0
 --- !u!1 &1333588026
 GameObject:
   m_ObjectHideFlags: 0
