@@ -19,12 +19,13 @@ public class PlayerBattleController : MonoBehaviour
     public Image playerHealthImage;
     public Image enemyhealthImage;
     public Image playerStaminaImage;
+    public Text combatLogText;
 
     //enemy control
     public float enemySelect;
     public bool shouldSelectEnemy = false;
     public float enemyMaxHealth;
-    public float enemyHealth = 1f;
+    public float enemyHealth = 1;
     public float enemyMaxStamina;
     public float enemyStamina;
 
@@ -73,20 +74,20 @@ public class PlayerBattleController : MonoBehaviour
         switch (enemySelect)
         {
             case 1:
-                enemyMaxHealth = 150f;
-                enemyMaxStamina = 70f;
+                enemyMaxHealth = 150;
+                enemyMaxStamina = 70;
                 break;
             case 2:
-                enemyMaxHealth = 60f;
-                enemyMaxStamina = 50f;
+                enemyMaxHealth = 60;
+                enemyMaxStamina = 50;
                 break;
             case 3:
-                enemyMaxHealth = 120f;
-                enemyMaxStamina = 10f;
+                enemyMaxHealth = 120;
+                enemyMaxStamina = 10;
                 break;
             case 4:
-                enemyMaxHealth = 80f;
-                enemyMaxStamina = 90f;
+                enemyMaxHealth = 80;
+                enemyMaxStamina = 90;
                 break;
         }
 
@@ -96,12 +97,29 @@ public class PlayerBattleController : MonoBehaviour
             {
                 enemyHealth = enemyMaxHealth;
             }
+            switch (enemySelect)
+            {
+                case 1:
+                    combatLogText.text = "A beastly Werewolf approaches!";
+                    break;
+                case 2:
+                    combatLogText.text = "The Spirits are awoken!";
+                    break;
+                case 3:
+                    combatLogText.text = "The Dead have come!";
+                    break;
+                case 4:
+                    combatLogText.text = "Arrogant Vampire! You will not see another night!";
+                    break;
+            }
             }
 
         if(inBattle && enemyHealth <=0 && !startOfBattle)
         {
             endBattlePanel.gameObject.SetActive(true);
             victoryImage.gameObject.SetActive(true);
+            player.Stamina = 0;
+            enemyStamina = 0;
         }
         else if(inBattle && player.Health <= 0)
         {
@@ -125,7 +143,7 @@ public class PlayerBattleController : MonoBehaviour
 
         if (enemyStamina < enemyMaxStamina)
         {
-            enemyStamina = enemyStamina + 2 * Time.deltaTime;
+            enemyStamina += 2 * Time.deltaTime;
             startOfBattle = false;
         }
         else if(enemyStamina >= enemyMaxStamina)
@@ -136,9 +154,9 @@ public class PlayerBattleController : MonoBehaviour
 
     void EnemyAttack()
     {
-        player.Health = player.Health - enemyStamina;
-        enemyStamina = 0f;
-
+        player.Health = player.Health - enemyMaxStamina;
+        combatLogText.text = "The foe deals " + enemyMaxStamina + " damage!";
+        enemyStamina = 0;
     }
 
     public void onSilverButton()
@@ -147,15 +165,21 @@ public class PlayerBattleController : MonoBehaviour
         {
             if(enemySelect == 1)
             {
-                enemyHealth = enemyHealth - 100f;
+                enemyHealth = enemyHealth - 100;
                 player.Stamina = 0f;
+                combatLogText.text = "Silver scalds it's wicked flesh!";
             }
             else
             {
-                enemyHealth = enemyHealth - 20f;
+                enemyHealth = enemyHealth - 20;
                 player.Stamina = 50f;
+                combatLogText.text = "Perhaps not the most effective tool...";
             }
 
+        }
+        else if(player.Stamina < player.maxStamina)
+        {
+            combatLogText.text = "I must gather my strength!";
         }
     }
 
@@ -165,16 +189,22 @@ public class PlayerBattleController : MonoBehaviour
         {
             if (enemySelect == 2)
             {
-                enemyHealth = enemyHealth - 100f;
+                enemyHealth = enemyHealth - 100;
                 player.Stamina = 0f;
+                combatLogText.text = "Haunt this place no longer!";
             }
             else
             {
-                enemyHealth = enemyHealth - 20f;
+                enemyHealth = enemyHealth - 20;
                 player.Stamina = 50f;
+                combatLogText.text = "Perhaps not the most effective tool...";
             }
 
 
+        }
+        else if (player.Stamina < player.maxStamina)
+        {
+            combatLogText.text = "I must gather my strength!";
         }
     }
     public void onFireButton()
@@ -183,15 +213,21 @@ public class PlayerBattleController : MonoBehaviour
         {
             if (enemySelect == 3)
             {
-                enemyHealth = enemyHealth - 100f;
+                enemyHealth = enemyHealth - 100;
                 player.Stamina = 0f;
+                combatLogText.text = "Be purged in righteous flames!";
             }
             else
             {
-                enemyHealth = enemyHealth - 20f;
+                enemyHealth = enemyHealth - 20;
                 player.Stamina = 50f;
+                combatLogText.text = "Perhaps not the most effective tool...";
             }
 
+        }
+        else if (player.Stamina < player.maxStamina)
+        {
+            combatLogText.text = "I must gather my strength!";
         }
     }
    public void onBlessedButton()
@@ -200,14 +236,20 @@ public class PlayerBattleController : MonoBehaviour
         {
             if (enemySelect == 4)
             {
-                enemyHealth = enemyHealth - 100f;
+                enemyHealth = enemyHealth - 100;
                 player.Stamina = 0f;
+                combatLogText.text = "You will not corrupt this world!";
             }
             else
             {
-                enemyHealth = enemyHealth - 20f;
+                enemyHealth = enemyHealth - 20;
                 player.Stamina = 50f;
+                combatLogText.text = "Perhaps not the most effective tool...";
             }
+        }
+        else if (player.Stamina < player.maxStamina)
+        {
+            combatLogText.text = "I must gather my strength!";
         }
     }
 
@@ -220,9 +262,11 @@ public class PlayerBattleController : MonoBehaviour
             if(attemptFlee == 1)
             {
                 BattleReset();
+                combatLogText.text = "I have escaped, for now.";
             }
-            else
+            else if (attemptFlee != 1)
             {
+                combatLogText.text = "The enemy has me trapped!";
                 return;
             }
         }
@@ -233,9 +277,10 @@ public class PlayerBattleController : MonoBehaviour
     public void BattleReset()
     {
         player.Stamina = 0f;
-        enemyHealth = 0f;
-        enemyStamina = 0f;
+        enemyHealth = 0;
+        enemyStamina = 0;
         enemySelect = 0f;
+        combatLogText.text = "";
         inBattle = false;
 
     }

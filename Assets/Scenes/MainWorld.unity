@@ -434,6 +434,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &547850702 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1510884929619444705, guid: d594c9ddc1b72b04bb7635a434b01729,
+    type: 3}
+  m_PrefabInstance: {fileID: 876804438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &876804438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455,11 +467,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BattleUICanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3029857069219032783, guid: d594c9ddc1b72b04bb7635a434b01729,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3029857069219032787, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
@@ -499,7 +506,7 @@ PrefabInstance:
     - target: {fileID: 3029857069219032787, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3029857069219032787, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
@@ -2956,6 +2963,7 @@ MonoBehaviour:
   playerHealthImage: {fileID: 205231755}
   enemyhealthImage: {fileID: 2117167149}
   playerStaminaImage: {fileID: 153433464}
+  combatLogText: {fileID: 547850702}
   enemySelect: 0
   shouldSelectEnemy: 0
   enemyMaxHealth: 0
@@ -3405,7 +3413,7 @@ RectTransform:
   m_Children:
   - {fileID: 1665039583}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4704,7 +4712,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2117167149 stripped
 MonoBehaviour:
