@@ -7,6 +7,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public PlayerBattleController battle;
+    public bool Debug;
     public float Health = 100;
     public float maxHealth = 100f;
     public float Stamina = 100;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float itemsHeld;
     public float maxItems = 5f;
     public Animator player;
+    public GameObject camera;
 
     bool move = true;
     float Timer;
@@ -53,7 +55,7 @@ public class PlayerController : MonoBehaviour
     public void Check()
     {
         int roll = Random.Range(1, 10);
-        if (battleCooldown == 0)
+        if (battleCooldown <= 0 && Debug)
         {
             if (roll == 1)
             {
@@ -80,7 +82,7 @@ public class PlayerController : MonoBehaviour
             {
                 case 0:
                     hit = Physics2D.Raycast(transform.position, Vector2.up);
-                    if (hit.distance > 1 || hit == false)
+                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds") || hit == false)
                     {
                         //player.SetBool("WalkingDown", true);
                         gameObject.transform.position += new Vector3(0, 1, 0);
@@ -88,7 +90,7 @@ public class PlayerController : MonoBehaviour
                     break;
                 case 1:
                     hit = Physics2D.Raycast(transform.position, Vector2.right);
-                    if (hit.distance > 1 || hit == false)
+                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds") || hit == false)
                     {
                         //player.SetBool("WalkingRight", true);
                         gameObject.transform.position += new Vector3(1, 0, 0);
@@ -96,7 +98,7 @@ public class PlayerController : MonoBehaviour
                     break;
                 case 2:
                     hit = Physics2D.Raycast(transform.position, Vector2.down);
-                    if (hit.distance > 1 || hit == false)
+                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds") || hit == false)
                     {
                         //player.SetBool("WalkingUp", true);
                         gameObject.transform.position += new Vector3(0, -1, 0);
@@ -104,19 +106,44 @@ public class PlayerController : MonoBehaviour
                     break;
                 case 3:
                     hit = Physics2D.Raycast(transform.position, Vector2.left);
-                    if (hit.distance > 1 || hit == false)
+                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds") || hit == false)
                     {
-                        player.SetBool("WalkingLeft", true);
+                        //player.SetBool("WalkingLeft", true);
                         gameObject.transform.position += new Vector3(-1, 0, 0);
                     }
                     break;
                 default:
-
+                    hit = Physics2D.Raycast(transform.position, Vector2.up);
                     break;
             }
+            if (hit.distance <= 1 && hit.transform.tag == "ScreenBounds")
+            {
+                MoveCamera(Movement);
+            }
         }
+    }
+    private void MoveCamera(int Movement)
+    {
+        switch (Movement)
+        {
+            case 0:
+                camera.transform.position += new Vector3(0, 11);
+                break;
+            case 1:
+                camera.transform.position += new Vector3(19, 0);
+                break;
+            case 2:
+                camera.transform.position += new Vector3(0, -11);
+                break;
+            case 3:
+                camera.transform.position += new Vector3(-19, 0);
+                break;
+            default:
 
-        void AnimationReset()
+                break;
+        }
+    }
+    void AnimationReset()
         {
             player.SetBool("WalkingUp", false);
             player.SetBool("WalkingDown", false);
@@ -124,4 +151,3 @@ public class PlayerController : MonoBehaviour
             player.SetBool("WalkingRight", false);
         }
     }
-}
