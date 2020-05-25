@@ -575,6 +575,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &64867855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1176055785038010388, guid: d594c9ddc1b72b04bb7635a434b01729,
+    type: 3}
+  m_PrefabInstance: {fileID: 876804438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &95102307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2500,6 +2512,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1849930554217732502, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1234914173}
+    - target: {fileID: 1849930554217732502, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onItemButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3029857068979355956, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2837,6 +2859,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974177276}
   m_CullTransparentMesh: 0
+--- !u!114 &984713256 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1510884929619444705, guid: d594c9ddc1b72b04bb7635a434b01729,
+    type: 3}
+  m_PrefabInstance: {fileID: 876804438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &986908703
 GameObject:
   m_ObjectHideFlags: 0
@@ -67268,6 +67302,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1099652168 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1849930554217732502, guid: d594c9ddc1b72b04bb7635a434b01729,
+    type: 3}
+  m_PrefabInstance: {fileID: 876804438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1165728303
 GameObject:
   m_ObjectHideFlags: 0
@@ -67803,6 +67849,8 @@ MonoBehaviour:
   maxHealth: 100
   Stamina: 0
   maxStamina: 100
+  itemsHeld: 0
+  maxItems: 5
   player: {fileID: 1234914172}
   camera: {fileID: 1938191917}
 --- !u!212 &1234914170
@@ -67844,12 +67892,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b87660d4904f8ff4db2ec3086e477f63, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bafbaa3d8de17b6429c7f575a9dab8cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -67877,7 +67925,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234914168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4c4df80e50776fb499c8f6f9f92d0f12, type: 2}
   m_CullingMode: 0
@@ -67907,9 +67955,12 @@ MonoBehaviour:
   endBattlePanel: {fileID: 46684286}
   victoryImage: {fileID: 1937289843}
   defeatImage: {fileID: 1826805517}
+  itemButton: {fileID: 1099652168}
+  lootText: {fileID: 64867855}
   playerHealthImage: {fileID: 205231755}
   enemyhealthImage: {fileID: 2117167149}
   playerStaminaImage: {fileID: 153433464}
+  combatLogText: {fileID: 984713256}
   enemySelect: 0
   shouldSelectEnemy: 0
   enemyMaxHealth: 0
@@ -67917,6 +67968,7 @@ MonoBehaviour:
   enemyMaxStamina: 0
   enemyStamina: 0
   startOfBattle: 0
+  lootChance: 0
 --- !u!1 &1333588026
 GameObject:
   m_ObjectHideFlags: 0
