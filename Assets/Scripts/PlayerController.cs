@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public float maxItems = 5f;
     public Animator player;
     public GameObject mainCamera;
-
+    Collider2D collisons;
     bool move = true;
     float Timer;
     int battleCooldown;
@@ -27,6 +27,11 @@ public class PlayerController : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    public void Start()
+    {
+        collisons = GetComponent<Collider2D>();
     }
 
     private void Update()
@@ -77,6 +82,7 @@ public class PlayerController : MonoBehaviour
     {
         if (move && Timer <= 0)
         {
+            collisons.enabled = false;
             Timer = 0.4f;
             Check();
             RaycastHit2D hit;
@@ -86,7 +92,7 @@ public class PlayerController : MonoBehaviour
             {
                 case 0:
                     hit = Physics2D.Raycast(transform.position, Vector2.up);
-                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds") || hit == false)
+                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds" || hit.transform.GetComponent<Collider2D>().isTrigger) || hit == false)
                     {
                         //player.SetBool("WalkingDown", true);
                         gameObject.transform.position += new Vector3(0, 1, 0);
@@ -94,7 +100,7 @@ public class PlayerController : MonoBehaviour
                     break;
                 case 1:
                     hit = Physics2D.Raycast(transform.position, Vector2.right);
-                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds") || hit == false)
+                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds" || hit.transform.GetComponent<Collider2D>().isTrigger) || hit == false)
                     {
                         //player.SetBool("WalkingRight", true);
                         gameObject.transform.position += new Vector3(1, 0, 0);
@@ -102,7 +108,7 @@ public class PlayerController : MonoBehaviour
                     break;
                 case 2:
                     hit = Physics2D.Raycast(transform.position, Vector2.down);
-                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds") || hit == false)
+                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds" || hit.transform.GetComponent<Collider2D>().isTrigger) || hit == false)
                     {
                         //player.SetBool("WalkingUp", true);
                         gameObject.transform.position += new Vector3(0, -1, 0);
@@ -110,7 +116,7 @@ public class PlayerController : MonoBehaviour
                     break;
                 case 3:
                     hit = Physics2D.Raycast(transform.position, Vector2.left);
-                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds") || hit == false)
+                    if ((hit.distance > 1 || hit.transform.tag == "ScreenBounds" || hit.transform.GetComponent<Collider2D>().isTrigger) || hit == false)
                     {
                         //player.SetBool("WalkingLeft", true);
                         gameObject.transform.position += new Vector3(-1, 0, 0);
@@ -124,6 +130,7 @@ public class PlayerController : MonoBehaviour
             {
                 MoveCamera(Movement);
             }
+            collisons.enabled = true;
         }
     }
     private void MoveCamera(int Movement)
