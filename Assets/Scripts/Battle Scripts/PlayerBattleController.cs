@@ -101,6 +101,10 @@ public class PlayerBattleController : MonoBehaviour
                 enemyMaxHealth = 80;
                 enemyMaxStamina = 90;
                 break;
+            case 5:
+                enemyMaxHealth = 320;
+                enemyMaxStamina = 50;
+                break;
         }
 
         if(startOfBattle)
@@ -122,6 +126,9 @@ public class PlayerBattleController : MonoBehaviour
                     break;
                 case 4:
                     combatLogText.text = "Arrogant Vampire! You will not see another night!";
+                    break;
+                case 5:
+                    combatLogText.text = "The Horror. My final prize!";
                     break;
             }
             }
@@ -185,7 +192,7 @@ public class PlayerBattleController : MonoBehaviour
     {
         if(player.Stamina >= player.maxStamina)
         {
-            if(enemySelect == 1)
+            if(enemySelect == 1 || enemySelect == 5)
             {
                 enemyHealth = enemyHealth - 100;
                 player.Stamina = 0f;
@@ -209,7 +216,7 @@ public class PlayerBattleController : MonoBehaviour
     {
         if (player.Stamina >= player.maxStamina)
         {
-            if (enemySelect == 2)
+            if (enemySelect == 2 || enemySelect == 5)
             {
                 enemyHealth = enemyHealth - 100;
                 player.Stamina = 0f;
@@ -233,7 +240,7 @@ public class PlayerBattleController : MonoBehaviour
     {
         if (player.Stamina >= player.maxStamina)
         {
-            if (enemySelect == 3)
+            if (enemySelect == 3 || enemySelect == 5)
             {
                 enemyHealth = enemyHealth - 100;
                 player.Stamina = 0f;
@@ -256,7 +263,7 @@ public class PlayerBattleController : MonoBehaviour
     {
         if (player.Stamina >= player.maxStamina)
         {
-            if (enemySelect == 4)
+            if (enemySelect == 4 || enemySelect == 5)
             {
                 enemyHealth = enemyHealth - 100;
                 player.Stamina = 0f;
