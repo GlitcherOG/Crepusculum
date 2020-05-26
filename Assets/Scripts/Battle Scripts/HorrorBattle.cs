@@ -11,6 +11,7 @@ public class HorrorBattle : MonoBehaviour
         theHorror.inBattle = true;
         theHorror.startOfBattle = true;
         theHorror.enemyHealth = 320;
+        theHorror.combatLogText.text = "The Horror. My final prize!";
     }
 
 }
