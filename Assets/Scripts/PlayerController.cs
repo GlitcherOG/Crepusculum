@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     public PlayerBattleController battle;
     public bool Debug;
     public float Health = 100;
@@ -15,14 +16,17 @@ public class PlayerController : MonoBehaviour
     public float itemsHeld;
     public float maxItems = 5f;
     public Animator player;
-    public GameObject camera;
+    public GameObject mainCamera;
 
     bool move = true;
     float Timer;
     int battleCooldown;
-    private void Start()
+    private void Awake()
     {
-
+        if (instance == null)
+        {
+            instance = this;
+        }
     }
 
     private void Update()
@@ -127,16 +131,16 @@ public class PlayerController : MonoBehaviour
         switch (Movement)
         {
             case 0:
-                camera.transform.position += new Vector3(0, 11);
+                mainCamera.transform.position += new Vector3(0, 11);
                 break;
             case 1:
-                camera.transform.position += new Vector3(19, 0);
+                mainCamera.transform.position += new Vector3(19, 0);
                 break;
             case 2:
-                camera.transform.position += new Vector3(0, -11);
+                mainCamera.transform.position += new Vector3(0, -11);
                 break;
             case 3:
-                camera.transform.position += new Vector3(-19, 0);
+                mainCamera.transform.position += new Vector3(-19, 0);
                 break;
             default:
 

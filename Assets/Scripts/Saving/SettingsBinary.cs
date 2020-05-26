@@ -8,7 +8,7 @@ public static class SettingsBinary
         //New Binary Formatter
         BinaryFormatter formatter = new BinaryFormatter();
         //New string path for the application saving location
-        string path = Application.persistentDataPath + "/Config.cfg";
+        string path = Application.persistentDataPath + "/Settings.cfg";
         //New file stream using path
         FileStream stream = new FileStream(path, FileMode.Create);
         //New SettingsData called data
@@ -21,7 +21,7 @@ public static class SettingsBinary
     public static SettingsData LoadSettingsData()
     {
         //New string path for the application loading location
-        string path = Application.persistentDataPath + "/Config.cfg";
+        string path = Application.persistentDataPath + "/Settings.cfg";
         //If the path exists
         if (File.Exists(path))
         {

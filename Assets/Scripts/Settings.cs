@@ -59,41 +59,42 @@ public class Settings : MonoBehaviour
         //Refresh the shown value
         resolutionDropdown.RefreshShownValue();
         //If the save file for settings isnt null
-        //if (SettingsBinary.LoadSettingsData() != null)
-        //{
-        //    //Load settings
-        //    Load();
-        //}
-        //else
-        //{
-        //    //Save settings
-        //    Save();
-        //}
+        if (SettingsBinary.LoadSettingsData() != null)
+        {
+            //Load settings
+            Load();
+        }
+        else
+        {
+            //Save settings
+            Save();
+        }
     }
 
-    //public void Load()
-    //{
-    //    //New SettingsData for the data loaded from settings file
-    //    SettingsData data = SettingsBinary.LoadSettingsData();
-    //    //Set the audioMixer volume to the data soundLevel
-    //    audioMixer.SetFloat("Volume", data.soundLevel);
-    //    //Change the volume text to show the volume percentage
-    //    volumeText.text = "Master Volume: " + Mathf.Round((((80f + data.soundLevel) / 80) * 100)).ToString() + "%";
-    //    //Set the resolution dropdown value to the Data resolutionIndex
-    //    resolutionDropdown.value = data.resolutionIndex;
-    //    //Set the quailty dropdown value to the data quailtyIndex
-    //    quailtyDropdown.value = data.quailtyIndex;
-    //    //Set the quality level using the quailtyIndex
-    //    QualitySettings.SetQualityLevel(data.quailtyIndex);
-    //    //Set the volumeSlider value using the data sound level
-    //    volumeSlider.value = data.soundLevel;
-    //}
+    public void Load()
+    {
+        //New SettingsData for the data loaded from settings file
+        SettingsData data = SettingsBinary.LoadSettingsData();
+        //Set the audioMixer volume to the data soundLevel
+        audioMixer.SetFloat("Volume", data.soundLevel);
+        //Change the volume text to show the volume percentage
+        //volumeText.text = "Master Volume: " + Mathf.Round((((80f + data.soundLevel) / 80) * 100)).ToString() + "%";
+        //Set the resolution dropdown value to the Data resolutionIndex
+        resolutionDropdown.value = data.resolutionIndex;
+        //Set the quailty dropdown value to the data quailtyIndex
+        quailtyDropdown.value = data.quailtyIndex;
+        //Set the quality level using the quailtyIndex
+        QualitySettings.SetQualityLevel(data.quailtyIndex);
+        //Set the volumeSlider value using the data sound level
+        volumeSlider.value = data.soundLevel;
+        MobileHud = data.mobileHud;
+    }
 
-    //public void Save()
-    //{
-    //    //Save settings data
-    //    SettingsBinary.SaveSettingData(this);
-    //}
+    public void Save()
+    {
+        //Save settings data
+        SettingsBinary.SaveSettingData(this);
+    }
 
     public void SetVolume(float soundLevel)
     {

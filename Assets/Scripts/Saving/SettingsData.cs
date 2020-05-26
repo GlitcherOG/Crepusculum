@@ -4,6 +4,7 @@ public class SettingsData
     public int quailtyIndex; //The quailty Index of the game
     public int resolutionIndex; //resolution Index of the game
     public float soundLevel; //Sound Level of the game
+    public bool mobileHud;
     public SettingsData(Settings settings)
     {
         //Set the quailty index to be the value located from the quailty dropdown 
@@ -12,5 +13,6 @@ public class SettingsData
         resolutionIndex = settings.resolutionDropdown.value;
         //Set the soundlevel to the the value located in the volumeSlider
         soundLevel = settings.volumeSlider.value;
+        mobileHud = settings.MobileHud;
     }
 }
