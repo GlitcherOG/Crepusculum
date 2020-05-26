@@ -104,7 +104,7 @@ public class PlayerBattleController : MonoBehaviour
                 break;
             case 5:
                 enemyMaxHealth = 320;
-                enemyMaxStamina = 50;
+                enemyMaxStamina = 40;
                 break;
         }
 

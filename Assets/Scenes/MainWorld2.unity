@@ -2214,6 +2214,18 @@ RectTransform:
   m_AnchoredPosition: {x: -7.5, y: -0.5}
   m_SizeDelta: {x: -35, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &653354444 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5195967223818721736, guid: d594c9ddc1b72b04bb7635a434b01729,
+    type: 3}
+  m_PrefabInstance: {fileID: 876804438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &654258820
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,6 +2462,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773980116}
   m_CullTransparentMesh: 0
+--- !u!114 &777712618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1510884929619444705, guid: d594c9ddc1b72b04bb7635a434b01729,
+    type: 3}
+  m_PrefabInstance: {fileID: 876804438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &837783670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,6 +2610,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1849930554217732502, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1234914173}
+    - target: {fileID: 1849930554217732502, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onItemButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3029857068979355956, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2711,6 +2745,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3029857069319795310, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 219fd02b1e2bbc2468e2bfb8b8566e09,
+        type: 3}
     - target: {fileID: 3029857069426596948, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2731,6 +2771,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: BattleReset
       objectReference: {fileID: 0}
+    - target: {fileID: 3029857069762388574, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 219fd02b1e2bbc2468e2bfb8b8566e09,
+        type: 3}
+    - target: {fileID: 3029857070360866760, guid: d594c9ddc1b72b04bb7635a434b01729,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 219fd02b1e2bbc2468e2bfb8b8566e09,
+        type: 3}
     - target: {fileID: 3029857070619414949, guid: d594c9ddc1b72b04bb7635a434b01729,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -67887,7 +67939,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battle: {fileID: 1234914173}
-  Debug: 0
+  Debug: 1
   Health: 100
   maxHealth: 100
   Stamina: 0
@@ -67998,12 +68050,13 @@ MonoBehaviour:
   endBattlePanel: {fileID: 46684286}
   victoryImage: {fileID: 1937289843}
   defeatImage: {fileID: 1826805517}
-  itemButton: {fileID: 0}
-  lootText: {fileID: 0}
+  itemButton: {fileID: 2096586959}
+  lootText: {fileID: 1828021057}
+  gameEndPanel: {fileID: 653354444}
   playerHealthImage: {fileID: 205231755}
   enemyhealthImage: {fileID: 2117167149}
   playerStaminaImage: {fileID: 153433464}
-  combatLogText: {fileID: 0}
+  combatLogText: {fileID: 777712618}
   enemySelect: 0
   shouldSelectEnemy: 0
   enemyMaxHealth: 0
@@ -70613,6 +70666,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1828021057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1176055785038010388, guid: d594c9ddc1b72b04bb7635a434b01729,
+    type: 3}
+  m_PrefabInstance: {fileID: 876804438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1832723762
@@ -73572,6 +73637,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2096586959 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1849930554217732502, guid: d594c9ddc1b72b04bb7635a434b01729,
+    type: 3}
+  m_PrefabInstance: {fileID: 876804438}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2117167149 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3029857069319795310, guid: d594c9ddc1b72b04bb7635a434b01729,

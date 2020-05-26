@@ -9,6 +9,8 @@ public class HorrorBattle : MonoBehaviour
         PlayerBattleController theHorror = collision.GetComponentInParent<PlayerBattleController>();
         theHorror.enemySelect = 5;
         theHorror.inBattle = true;
+        theHorror.startOfBattle = true;
+        theHorror.enemyHealth = 320;
     }
 
 }
