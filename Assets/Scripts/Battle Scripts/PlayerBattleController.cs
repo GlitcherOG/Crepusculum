@@ -16,6 +16,7 @@ public class PlayerBattleController : MonoBehaviour
     public Image defeatImage;
     public Button itemButton;
     public Text lootText;
+    public Image gameEndPanel;
 
     //display numeric changes
     public Image playerHealthImage;
@@ -148,6 +149,10 @@ public class PlayerBattleController : MonoBehaviour
                     lootText.enabled = true;
                     lootChance = 8;
                 }
+            }
+            if(enemySelect == 5)
+            {
+                gameEndPanel.enabled = true;
             }
         }
         else if(inBattle && player.Health <= 0)

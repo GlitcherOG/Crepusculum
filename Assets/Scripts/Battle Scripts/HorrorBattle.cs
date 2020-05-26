@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HorrorBattle : MonoBehaviour
 {
-
     void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerBattleController theHorror = collision.GetComponentInParent<PlayerBattleController>();
