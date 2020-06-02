@@ -24,6 +24,10 @@ public class ButtonCustom : MonoBehaviour, IPointerEnterHandler, IPointerDownHan
         }
     }
 
+    public void OnDisable()
+    {
+        toggle = false;
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         GetComponent<Image>().color = hoverColor;
