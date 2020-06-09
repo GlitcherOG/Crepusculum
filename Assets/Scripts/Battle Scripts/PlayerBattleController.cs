@@ -14,6 +14,7 @@ public class PlayerBattleController : MonoBehaviour
     public Image endBattlePanel;
     public Image victoryImage;
     public Image defeatImage;
+    public Image enemySprite;
     public Button itemButton;
     public Text lootText;
     public Image gameEndPanel;
@@ -31,6 +32,10 @@ public class PlayerBattleController : MonoBehaviour
     public float enemyHealth = 1;
     public float enemyMaxStamina;
     public float enemyStamina;
+    public Sprite vampireSprite;
+    public Sprite spiritSprite;
+    public Sprite zombieSprite;
+    public Sprite werewolfSprite;
 
     public bool startOfBattle = false;
     public float lootChance = 0;
@@ -118,18 +123,23 @@ public class PlayerBattleController : MonoBehaviour
             {
                 case 1:
                     combatLogText.text = "A beastly Werewolf approaches!";
+                    enemySprite.sprite = werewolfSprite;
                     break;
                 case 2:
                     combatLogText.text = "The Spirits are awoken!";
+                    enemySprite.sprite = spiritSprite;
                     break;
                 case 3:
                     combatLogText.text = "The Dead have come!";
+                    enemySprite.sprite = zombieSprite;
                     break;
                 case 4:
                     combatLogText.text = "Arrogant Vampire! You will not see another night!";
+                    enemySprite.sprite = vampireSprite;
                     break;
                 case 5:
                     combatLogText.text = "The Horror. My final prize!";
+                    enemySprite.enabled = false;
                     break;
             }
             }
@@ -332,5 +342,16 @@ public class PlayerBattleController : MonoBehaviour
         lootChance = 0;
         inBattle = false;
 
+        if(player.Health <= 0)
+        {
+            GameReset();
+        }
+    }
+
+    public void GameReset()
+    {
+        player.Health = player.maxHealth;
+        player.itemsHeld = 0;
+        player.transform.position = new Vector3(0.5f, 0.5f, 0f);
     }
 }
