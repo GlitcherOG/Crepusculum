@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
                 Timer -= Time.deltaTime;
             }
         }
+
     }
 
     public void Check()
