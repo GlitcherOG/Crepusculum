@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         if (move && Timer <= 0)
         {
             collisons.enabled = false;
-            Timer = 0.4f;
+            Timer = 0.3f;
             Check();
             RaycastHit2D hit;
             //AnimationReset();
