@@ -27,6 +27,7 @@ public class ButtonCustom : MonoBehaviour, IPointerEnterHandler, IPointerDownHan
     public void OnDisable()
     {
         toggle = false;
+        GetComponent<Image>().color = baseColor;
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
