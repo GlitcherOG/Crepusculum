@@ -318,8 +318,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 4.8}
-  m_SizeDelta: {x: 500, y: 380}
+  m_AnchoredPosition: {x: 0, y: 0.2}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22159508
 MonoBehaviour:
@@ -663,8 +663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb321b15837dde4e8a9d2f09a178b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 0.6509804}
-  hoverColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.6509804}
+  baseColor: {r: 1, g: 1, b: 1, a: 0.33333334}
+  hoverColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.33333334}
   OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1781,8 +1781,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -116.8, y: 4.8}
-  m_SizeDelta: {x: -310.6, y: -72.8}
+  m_AnchoredPosition: {x: -119, y: 4}
+  m_SizeDelta: {x: -406.44, y: -41.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &506879858
 MonoBehaviour:
@@ -2342,7 +2342,6 @@ GameObject:
   m_Component:
   - component: {fileID: 644773141}
   - component: {fileID: 644773140}
-  - component: {fileID: 644773139}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -2350,14 +2349,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &644773139
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644773138}
-  m_Enabled: 1
 --- !u!20 &644773140
 Camera:
   m_ObjectHideFlags: 0
@@ -72263,7 +72254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   battle: {fileID: 1234914173}
-  Debug: 1
+  debug: 0
   Health: 100
   maxHealth: 100
   Stamina: 0
@@ -72272,6 +72263,8 @@ MonoBehaviour:
   maxItems: 5
   player: {fileID: 1234914172}
   mainCamera: {fileID: 1938191917}
+  move: 1
+  Timer: 0
 --- !u!212 &1234914170
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -72310,7 +72303,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bafbaa3d8de17b6429c7f575a9dab8cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -72896,8 +72889,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb321b15837dde4e8a9d2f09a178b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 0.6509804}
-  hoverColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.6509804}
+  baseColor: {r: 1, g: 1, b: 1, a: 0.33333334}
+  hoverColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.33333334}
   OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -73273,8 +73266,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb321b15837dde4e8a9d2f09a178b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 0.6509804}
-  hoverColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.6509804}
+  baseColor: {r: 1, g: 1, b: 1, a: 0.33333334}
+  hoverColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.33333334}
   OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -78541,8 +78534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fb321b15837dde4e8a9d2f09a178b31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseColor: {r: 1, g: 1, b: 1, a: 0.6509804}
-  hoverColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.6509804}
+  baseColor: {r: 1, g: 1, b: 1, a: 0.33333334}
+  hoverColor: {r: 0.7843138, g: 0.7843138, b: 0.7843138, a: 0.33333334}
   OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -78797,7 +78790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 393, y: 5}
+  m_AnchoredPosition: {x: 400, y: 5}
   m_SizeDelta: {x: 227.4, y: 242.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754538259

@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
     public PlayerBattleController battle;
-    public bool Debug;
+    public bool debug;
     public float Health = 100;
     public float maxHealth = 100f;
     public float Stamina = 100;
@@ -16,19 +16,13 @@ public class PlayerController : MonoBehaviour
     public Animator player;
     public GameObject mainCamera;
     Collider2D collisons;
-    bool move = true;
-    float Timer;
+    public bool move = true;
+    public float Timer;
     int battleCooldown;
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
 
     public void Start()
     {
+        instance = this;
         collisons = GetComponent<Collider2D>();
     }
 
@@ -52,18 +46,14 @@ public class PlayerController : MonoBehaviour
             {
                 movement(3);
             }
-            if (Timer >= 0)
-            {
-                Timer -= Time.deltaTime;
-            }
         }
-
+        Timer -= Time.unscaledDeltaTime;
     }
 
     public void Check()
     {
-        int roll = Random.Range(1, 10);
-        if (battleCooldown <= 0 && Debug)
+        int roll = Random.Range(3, 10);
+        if (battleCooldown <= 0 && debug)
         {
             if (roll == 1)
             {
@@ -82,7 +72,7 @@ public class PlayerController : MonoBehaviour
         if (move && Timer <= 0)
         {
             collisons.enabled = false;
-            Timer = 0.3f;
+            Timer = 0.7f;
             Check();
             RaycastHit2D hit;
             //AnimationReset();
